@@ -2,7 +2,7 @@
   <div class="left-menu">
     <div class="main-menu">
       <div class="avator">
-        <img src="../assets/avator.jpg" alt>
+        <img src="static/img/avator.jpg" alt>
       </div>
       <div class="pers_name">ROBIN
         <br>

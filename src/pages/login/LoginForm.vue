@@ -2,7 +2,7 @@
   <div class="login-form">
     <div class="form_l">
       <h3>
-        <img src="../../assets/logo2.png" alt>
+        <img src="static/img/logo2.png" alt>
         System logo
       </h3>
       <div class="form-title">
@@ -18,7 +18,7 @@
         <label for>
           <i class="iconfont icon-mima"></i>
         </label>
-        <input type="text" v-model="password" name="passworld" placeholder="password">
+        <input type="password" v-model="password" name="passworld" placeholder="password">
       </div>
       <p class="form-bj">
         <input type="checkbox"> rember me
@@ -31,42 +31,45 @@
       </div>
     </div>
     <div class="form_r">
-      <img src="../../assets/logo1.png" alt="png">
+      <img src="static/img/logo1.png" alt="png">
     </div>
   </div>
 </template>
 <script>
-
 import { post } from '../../utils/request.js'
 import Tool from '../../utils/Tool.js'
 export default {
   name: 'LoginForm',
-  data () {
+  data() {
     return {
       username: '',
       password: ''
-    }
+    };
   },
   methods: {
     // 参数验证
-    validateParams (u, p) {
+    validateParams(u, p) {
       // 验证是否为空
       if (!Tool.trim(u) || !Tool.trim(p)) {
         return false
       }
       return true
     },
-    loginIn (username, password) {
+    loginIn(username, password) {
       post('loginin', {
         name: username,
         password
+      }).then(res => {
+        if (res.isSuccess) {
+          window.location.href = '/'
+          window.location.reload()
+        }
       })
     },
-    login () {
-      console.log('this is robin')
+    login() {
       const isValid = this.validateParams(this.username, this.password)
       if (!isValid) {
-
+        console.log('this is robin')
       } else {
         this.loginIn(this.username, this.password)
       }

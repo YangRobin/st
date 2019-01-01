@@ -8,16 +8,14 @@
       <div
         class="right bfc"
         :class="subMenuVisible ?'m-left-show': 'm-left-hide'"
-        style="height:500px;"
       >
         <BreadCut/>
         <router-view/>
-        <Footer/>
+     
       </div>
     </main>
      <Toolbar/>
   </div>
-
 </template>
 <script>
 

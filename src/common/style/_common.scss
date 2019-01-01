@@ -1,37 +1,69 @@
-
-
 //警告:通用工具类必须具备通用性,不能有重复,多余的样式
 //在添加了一个通用类时,必须注明其用途
-html,body{
+html,
+body {
   height: 100%;
 }
-*{
+
+* {
   box-sizing: border-box;
 }
-body,ul{
-  padding:0;
-  margin:0,
+
+body,
+ul {
+  padding: 0;
+  margin: 0,
 }
+
 // div,main,footer,section,aside,header,nav,li,ol{
 //   margin:0 auto;
 // }
-a{
+a {
   text-decoration: none;
 }
 
+input{
+  width:100%;
+}
+input[type='text'],
+input[type='password'] {
+  border-radius: 4px;
+  border-style: none;
+  outline: none;
+  padding: 4px 11px;
+  border: 1px solid #d9d9d9;
+}
+
+input:focus {
+  border: 1px solid #5C7FFC;
+}
+
+
 // @author:robin.yang
 // @desc:左浮动通用类
-.fl{
+.fl {
   float: left;
 }
 
 // @author:robin.yang
 // @desc:创建bfc通用类
-.bfc{
+.bfc {
   overflow: hidden;
 }
 
-.row{
-  display:flex;
+.row {
+  display: flex;
   flex-wrap: wrap;
+}
+
+.btn {
+  border-style: none;
+  padding: 2px 10px;
+  text-align: center;
+  border-radius: 2px;
+  outline: none;
+}
+.btn-blue {
+  background: #6198ff;
+  color: white;
 }
