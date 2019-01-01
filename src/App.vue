@@ -5,29 +5,24 @@
       <div class="left fl" :class="subMenuVisible ? 'sub-menu-show':'sub-menu-hide'">
         <LeftMenu v-on:toggle-sub="toggleSubMenu"/>
       </div>
-      <div
-        class="right bfc"
-        :class="subMenuVisible ?'m-left-show': 'm-left-hide'"
-      >
+      <div class="right bfc" :class="subMenuVisible ?'m-left-show': 'm-left-hide'">
         <BreadCut/>
         <router-view/>
-     
       </div>
     </main>
-     <Toolbar/>
+    <Toolbar/>
   </div>
 </template>
 <script>
-
-import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
-import LeftMenu from '@/components/LeftMenu.vue'
-import BreadCut from '@/components/BreadCut.vue'
-import Toolbar from '@/components/Toolbar.vue'
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+import LeftMenu from "@/components/LeftMenu.vue";
+import BreadCut from "@/components/BreadCut.vue";
+import Toolbar from "@/components/Toolbar.vue";
 
 export default {
   // 子菜单显示开关
-  name: 'App',
+  name: "App",
   components: {
     Navbar,
     Footer,
@@ -35,24 +30,25 @@ export default {
     BreadCut,
     Toolbar
   },
-  data () {
+  data() {
     return {
       subMenuVisible: false
-    }
+    };
   },
   methods: {
-    toggleSubMenu (e) {
-      this.subMenuVisible = !this.subMenuVisible
+    toggleSubMenu(e) {
+      this.subMenuVisible = !this.subMenuVisible;
     }
   }
-}
+};
 </script>
 <style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #5c7ffc;
+  // color: #5c7ffc;
+  color: #252525;
   position: relative;
   font-size: 14px;
   height: 100%;

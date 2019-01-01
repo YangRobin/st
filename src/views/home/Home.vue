@@ -5,6 +5,10 @@
         <legend>首页面版</legend>
       </fieldset>
     </div>
+    <button class="btn btn-blue" @click="showModal">点击弹框</button>
+    <div>
+      <Modal :visible="modalVisible" size="1000px" @onClose="closeModal();"/>
+    </div>
     <div class="row">
       <div class="col-md-10">
         <div class="zgz_cont">
@@ -54,9 +58,7 @@
               <dd>
                 <h2>Write an article about design trends</h2>
                 <strong>12Mar.20rmg</strong>
-                <div
-                  class="box"
-                >lejahsjsadlkfjsakldjfokasjdofjiosajiofsadifjasiodjfioasjdiofjsaiodiasdjiofajsdi</div>
+                <div class="box">test</div>
               </dd>
             </dl>
           </div>
@@ -66,9 +68,27 @@
   </div>
 </template>
 <script>
+import Modal from "../../components/Modal";
 export default {
-  name: 'Home'
-}
+  name: "Home",
+  data() {
+    return {
+      modalVisible: false
+    };
+  },
+  methods: {
+    showModal() {
+      console.log("showmodal");
+      this.modalVisible = true;
+    },
+    closeModal() {
+      this.modalVisible = false;
+    }
+  },
+  components: {
+    Modal
+  }
+};
 </script>
 
 <style lang="scss" scoped>

@@ -84,9 +84,7 @@ export default {
   width: 800px;
   height: 400px;
   box-shadow: 0px 0px 13px 0 rgba(179, 208, 238, 0.52);
-  // border:1px solid red;
   text-align: center;
-  // padding:20px 0;
   border-radius: 10px;
   .form_l {
     width: 290px;

@@ -38,6 +38,12 @@ input:focus {
   border: 1px solid #5C7FFC;
 }
 
+.show{
+  display:block;
+}
+.hide{
+  display: none;
+}
 
 // @author:robin.yang
 // @desc:左浮动通用类
@@ -66,4 +72,21 @@ input:focus {
 .btn-blue {
   background: #6198ff;
   color: white;
+}
+.modal-btn{
+  border-radius: 9px;
+  padding: 0px 10px;
+  /* letter-spacing: 3px; */
+  border-style: none;
+  outline: none;
+  font-size: 13px;
+}
+.btn-green{
+  background-color:#3dc893;
+  color:white;
+}
+.btn-red{
+  background-color: #ff6e6e;
+  color:white;
+ 
 }
