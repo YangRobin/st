@@ -21,7 +21,6 @@ export default {
   },
   methods: {
     tab(index) {
-      console.log("#333333333333", index);
       this.activeIndex = index;
     }
   },
@@ -41,8 +40,8 @@ export default {
   align-items: center;
   li {
     padding: 0 10px;
-    height: 50px;
-    line-height: 50px;
+    height: 30px;
+    line-height: 30px;
     a {
       color: #5c7ffc;
     }

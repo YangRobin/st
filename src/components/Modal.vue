@@ -78,8 +78,6 @@ export default {
         height: 15px;
         background-color: #ff6262;
         border-radius: 50%;
-        // float: right;
-        // color: red;
       }
     }
     .modal-body{
