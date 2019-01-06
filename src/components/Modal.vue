@@ -1,5 +1,6 @@
+import { types } from 'node-sass';
 <template>
-  <div :class="visible?'show':'hide'">
+  <div :class="visible ?'show':'hide'">
     <div @click.stop="close" class="modal-mask"></div>
     <div class="modal-wrapper">
       <div class="modal" :style="{width:size}">
@@ -17,8 +18,8 @@
         </div>
         <div class="modal-footer">
           <slot name="footer">
-            <button @click="close" class="modal-btn btn-red" style="margin-right:10px">关闭</button>
-            <button @click="close" class="modal-btn btn-green">确定</button>
+            <button @click="close" class="modal-btn btn-red" style="margin-right:10px">{{closeText || '取消'}}</button>
+            <button @click="close" class="modal-btn btn-green">{{okText || '确定'}}</button>
           </slot>
         </div>
       </div>
@@ -28,20 +29,44 @@
 <script>
 export default {
   name: "Modal",
-  data: function() {
-    return {};
+  data() {
+    return {
+      visible:this.value
+    };
   },
-  created() {
-    console.log(this.show);
+  updated() {
+    console.log(this.show)
   },
   methods: {
     close() {
-      console.log("dsf");
-      this.$emit("onClose");
+      this.visible=false;
+      this.$emit('input',false)
     }
   },
-  props: ["visible",'size']
-};
+  props: {
+    value:{
+      type:Boolean,
+      default:false,
+    },
+    size:{
+      type:String,
+      default:'600px'
+    },
+    okText:{
+      type:String,
+      default:'确定'
+    },
+    closeText:{
+      type:String,
+      default:'取消'
+    },
+  },
+  watch:{
+    value(val){
+      this.visible=val
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .modal-mask {
@@ -76,10 +101,8 @@ export default {
         display: inline-block;
         width: 15px;
         height: 15px;
-        background-color: #ff6262;
+        background-color: #f11c1c;
         border-radius: 50%;
-        // float: right;
-        // color: red;
       }
     }
     .modal-body{
