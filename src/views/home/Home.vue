@@ -5,10 +5,28 @@
         <legend>首页面版</legend>
       </fieldset>
     </div>
-    <button class="btn btn-blue" @click="showModal">点击弹框</button>
+   
     <div>
-      <Modal :visible="modalVisible" size="1000px" @onClose="closeModal();"/>
+      <Modal 
+      okText="ok"
+      closeText="cancel"
+      v-model="modalVisible" 
+      size="500px" />
     </div>
+    <Card
+      title="弹框使用指南"
+      size="50%"
+    >
+     <div slot="body">
+        <button class="btn btn-blue" @click="showModal">点击弹框</button>
+     </div>
+     <div slot="footer">
+       <Table
+         :list="list"
+       />
+     </div>
+    </Card>
+
     <div class="row">
       <div class="col-md-10">
         <div class="zgz_cont">
@@ -69,24 +87,29 @@
 </template>
 <script>
 import Modal from "../../components/Modal";
+import Card from "../../components/Card";
+import Table from "../../components/Table"
 export default {
   name: "Home",
   data() {
     return {
-      modalVisible: false
+      modalVisible: false,
+      list:[{name:'robin'},{name:'test'},{name:'robin1'}],
     };
   },
   methods: {
     showModal() {
       console.log("showmodal");
       this.modalVisible = true;
+      console.log(this.modalVisible);
     },
     closeModal() {
       this.modalVisible = false;
     }
   },
   components: {
-    Modal
+    Modal,
+    Card,
   }
 };
 </script>
